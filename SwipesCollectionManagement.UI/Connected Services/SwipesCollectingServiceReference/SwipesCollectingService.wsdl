@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SwipesCollectingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Models" />
+      <xs:element name="StartCollectingSwipes">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StartCollectingSwipesResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStatus">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Models" minOccurs="0" name="GetStatusResult" nillable="true" type="q1:ArrayOfTerminalModel" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllSwipes">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllSwipesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Models" minOccurs="0" name="GetAllSwipesResult" nillable="true" type="q2:ArrayOfSwipeModel" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteAllSwipes">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteAllSwipesResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Enums" />
+      <xs:complexType name="ArrayOfTerminalModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TerminalModel" nillable="true" type="tns:TerminalModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTerminalModel" nillable="true" type="tns:ArrayOfTerminalModel" />
+      <xs:complexType name="TerminalModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Enums" minOccurs="0" name="Status" type="q1:TerminalStatus" />
+          <xs:element minOccurs="0" name="Swipes" nillable="true" type="tns:ArrayOfSwipeModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TerminalModel" nillable="true" type="tns:TerminalModel" />
+      <xs:complexType name="ArrayOfSwipeModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SwipeModel" nillable="true" type="tns:SwipeModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSwipeModel" nillable="true" type="tns:ArrayOfSwipeModel" />
+      <xs:complexType name="SwipeModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+          <xs:element minOccurs="0" name="SwipeDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SwipeDirection" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SwipeModel" nillable="true" type="tns:SwipeModel" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SwipesCollectionManagement.Service.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="TerminalStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Waiting" />
+          <xs:enumeration value="InProcess" />
+          <xs:enumeration value="Finished" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TerminalStatus" nillable="true" type="tns:TerminalStatus" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ISwipesCollectingService_StartCollectingSwipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartCollectingSwipes" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_StartCollectingSwipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartCollectingSwipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_GetAllSwipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSwipes" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_GetAllSwipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSwipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_DeleteAllSwipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllSwipes" />
+  </wsdl:message>
+  <wsdl:message name="ISwipesCollectingService_DeleteAllSwipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllSwipesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISwipesCollectingService">
+    <wsdl:operation name="StartCollectingSwipes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipesCollectingService/StartCollectingSwipes" message="tns:ISwipesCollectingService_StartCollectingSwipes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipesCollectingService/StartCollectingSwipesResponse" message="tns:ISwipesCollectingService_StartCollectingSwipes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipesCollectingService/GetStatus" message="tns:ISwipesCollectingService_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipesCollectingService/GetStatusResponse" message="tns:ISwipesCollectingService_GetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSwipes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipesCollectingService/GetAllSwipes" message="tns:ISwipesCollectingService_GetAllSwipes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipesCollectingService/GetAllSwipesResponse" message="tns:ISwipesCollectingService_GetAllSwipes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllSwipes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipesCollectingService/DeleteAllSwipes" message="tns:ISwipesCollectingService_DeleteAllSwipes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipesCollectingService/DeleteAllSwipesResponse" message="tns:ISwipesCollectingService_DeleteAllSwipes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISwipesCollectingService" type="tns:ISwipesCollectingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StartCollectingSwipes">
+      <soap:operation soapAction="http://tempuri.org/ISwipesCollectingService/StartCollectingSwipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://tempuri.org/ISwipesCollectingService/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSwipes">
+      <soap:operation soapAction="http://tempuri.org/ISwipesCollectingService/GetAllSwipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllSwipes">
+      <soap:operation soapAction="http://tempuri.org/ISwipesCollectingService/DeleteAllSwipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SwipesCollectingService">
+    <wsdl:port name="BasicHttpBinding_ISwipesCollectingService" binding="tns:BasicHttpBinding_ISwipesCollectingService">
+      <soap:address location="http://localhost:64960/SwipesCollectingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

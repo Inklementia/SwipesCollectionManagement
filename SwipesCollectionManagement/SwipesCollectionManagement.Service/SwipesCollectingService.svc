@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SwipesCollectionManagement.Service.SwipesCollectingService" CodeBehind="SwipesCollectingService.svc.cs" %>

@@ -1,0 +1,15 @@
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.UI.exe.config
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.UI.exe
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.UI.pdb
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.csproj.AssemblyReference.cache
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.SwipesCollectionManagementForm.resources
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.Properties.Resources.resources
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.csproj.GenerateResource.cache
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.csproj.CoreCompileInputs.cache
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.exe
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.pdb
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.Service.dll
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SynConnectDLL.dll
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.Service.pdb
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\bin\Debug\SwipesCollectionManagement.Service.dll.config
+D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.UI\obj\Debug\SwipesCollectionManagement.UI.csproj.CopyComplete

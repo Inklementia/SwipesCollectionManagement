@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost
+    Service="SwipesCollectionManagement.Service.SwipesCollectingService, SwipesCollectionManagement.Service"
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>
