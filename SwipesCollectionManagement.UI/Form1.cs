@@ -44,6 +44,7 @@ namespace SwipesCollectionManagement.UI
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
+          
             EnableStartButton(false);
             ClearDisplay(dgvTerminals);
             _client.StartCollectingSwipes();
@@ -90,8 +91,9 @@ namespace SwipesCollectionManagement.UI
                 Thread.Sleep(1000);
             }
 
-            
+            UpdateSwipesDataGridView();
             EnableStartButton(true);
+
             backgroundWorker1.ReportProgress(100);
         }
 
@@ -99,12 +101,12 @@ namespace SwipesCollectionManagement.UI
         {
             prgbProcess.Value = e.ProgressPercentage;
             lblProgress.Text = e.ProgressPercentage + "%";
-          
+       
         }
         private void backgroundWorker1_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
         {
             lblProgress.Text = "Retrieval Completed.";
-            UpdateSwipesDataGridView();
+            
         }
         private void dgvTerminals_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

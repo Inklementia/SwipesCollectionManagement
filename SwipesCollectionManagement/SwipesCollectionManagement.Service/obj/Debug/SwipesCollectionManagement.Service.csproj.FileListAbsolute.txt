@@ -1,8 +1,0 @@
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\bin\SwipesCollectionManagement.Service.dll.config
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\bin\SwipesCollectionManagement.Service.dll
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\bin\SwipesCollectionManagement.Service.pdb
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\bin\SynConnectDLL.dll
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\obj\Debug\SwipesCollectionManagement.Service.csproj.CoreCompileInputs.cache
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\obj\Debug\SwipesCollectionManagement.Service.csproj.CopyComplete
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\obj\Debug\SwipesCollectionManagement.Service.dll
-D:\csharp_files\CP\CP_CW1_8402\SwipesCollectionManagement\SwipesCollectionManagement.Service\obj\Debug\SwipesCollectionManagement.Service.pdb
