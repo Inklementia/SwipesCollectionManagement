@@ -168,8 +168,8 @@ D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.csproj.AssemblyReference.cache
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.csproj.CoreCompileInputs.cache
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.csproj.CopyComplete
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.dll
 D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.pdb
+D:\csharp_files\CP\girhyb\SwipesCollectionManagement\SwipesCollectionManagement.DAL\obj\Debug\SwipesCollectionManagement.DAL.csproj.AssemblyReference.cache

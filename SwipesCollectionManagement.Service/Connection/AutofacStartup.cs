@@ -13,24 +13,27 @@ namespace SwipesCollectionManagement.Service.Connection
 {
     public class AutofacStartup
     {
-        // creating container with Autofac service
+        // creating container for dependecy injection with Autofac 
+        // https://autofac.readthedocs.io/en/latest/integration/wcf.html
         public static void ConfigureContainer()
         {
+            //create new builder
             var builder = new ContainerBuilder();
 
-            //registering SwipesDbContext options
+            //create new DbContext builder 
             var dbContextOptionsBuilder =
                 new DbContextOptionsBuilder<SwipesDbContext>().UseSqlServer(ConfigurationManager.ConnectionStrings["SwipesCollectionDb"].ConnectionString);
-            //registering SwipesDbContext 
+
+            //register SwipesDbContext with options
             builder.RegisterType<SwipesDbContext>().WithParameter("options", dbContextOptionsBuilder.Options).InstancePerLifetimeScope();
 
-            //register swipe repository
+            //register swipe repository with connection string as a single instance
             builder.RegisterType<SwipeRepository>().WithParameter("connectionString", ConfigurationManager.ConnectionStrings["SwipesCollectionDb"].ConnectionString).SingleInstance();
 
-            //add WCF service to container
+            //register WCF service as a single instance
             builder.RegisterType<SwipesCollectingService>().SingleInstance();
-            //.Named<object>("my-service").
-            //build
+
+            //build an autofac container
             var container = builder.Build();
             AutofacHostFactory.Container = container;
         }

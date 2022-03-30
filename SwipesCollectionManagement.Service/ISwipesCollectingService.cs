@@ -8,20 +8,20 @@ using System.Text;
 
 namespace SwipesCollectionManagement.Service
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ISwipesCollectingService" in both code and config file together.
     [ServiceContract]
     public interface ISwipesCollectingService
     {
 
         [OperationContract]
-        void StartCollectingSwipes();
+        void StartCollectingSwipes(); //called from client 
 
         [OperationContract]
-        List<TerminalModel> GetStatus();
+        List<TerminalModel> GetStatus(); //called from client multiple times
 
         [OperationContract]
-        List<SwipeModel> GetAllSwipes();
+        List<SwipeModel> GetAllSwipes(); //return list of swipes from db
+
         [OperationContract]
-        void DeleteAllSwipes();
+        void DeleteAllSwipes(); //delete swipes from db
     }
 }

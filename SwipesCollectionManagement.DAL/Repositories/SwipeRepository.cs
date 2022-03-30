@@ -10,13 +10,14 @@ namespace SwipesCollectionManagement.DAL.Repositories
     public class SwipeRepository : ISwipeRepository
     {
         private readonly string _connectionString;
-        private static object _lock = new object();
 
+        // for autofac
         public SwipeRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
 
+        //adding list of swipes to db
         public void CreateRange(List<Swipe> list)
         {
             using (var context = new SwipesDbContext(_connectionString))
@@ -29,6 +30,7 @@ namespace SwipesCollectionManagement.DAL.Repositories
             }
         }
 
+        //getting all swipes from db
         public List<Swipe> GetAll()
         {
             using (var context = new SwipesDbContext(_connectionString))
@@ -37,14 +39,20 @@ namespace SwipesCollectionManagement.DAL.Repositories
                 return context.Swipes.ToList();
             }
         }
+
+        // clearing db (for testing purposes)
         public void DeleteAll()
         {
             using (var context = new SwipesDbContext(_connectionString))
             {
                 //delete all swipes from db
                 var all = context.Swipes.ToList();
-                context.Swipes.RemoveRange(all);
-                context.SaveChanges();
+                if(context.Swipes.Count() > 0)
+                {
+                    context.Swipes.RemoveRange(all);
+                    context.SaveChanges();
+                }
+              
              
             }
         }

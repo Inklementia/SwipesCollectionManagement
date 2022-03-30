@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f0a71ddb-6b7a-4e84-9f54-e46533883aae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e4322a0f-0025-421e-8a31-8eab5b2b041a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="http://localhost:64960/SwipesCollectingService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SwipesCollectingService.wsdl" MetadataType="Wsdl" ID="70269ab7-4aa3-438a-999f-9ead4c034ade" SourceId="1" SourceUrl="http://localhost:64960/SwipesCollectingService.svc?singleWsdl" />
+    <MetadataFile FileName="SwipesCollectingService.wsdl" MetadataType="Wsdl" ID="40305c4a-7ebd-453c-a29f-91f6b8148f63" SourceId="1" SourceUrl="http://localhost:64960/SwipesCollectingService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

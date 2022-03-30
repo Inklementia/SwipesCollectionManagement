@@ -11,6 +11,7 @@ namespace SwipesCollectionManagement.Service.Connection
 {
     public class SwipesDbContextFactory : IDesignTimeDbContextFactory<SwipesDbContext>
     {
+        //creating DbContext in Design compiling time
         public SwipesDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<SwipesDbContext>();

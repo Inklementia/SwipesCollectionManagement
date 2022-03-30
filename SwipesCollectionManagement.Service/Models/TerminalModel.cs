@@ -10,7 +10,6 @@ namespace SwipesCollectionManagement.Service.Models
     [DataContract]
     public class TerminalModel
     {
-    
         public TerminalModel(string ip)
         {
             IPAddress = ip;

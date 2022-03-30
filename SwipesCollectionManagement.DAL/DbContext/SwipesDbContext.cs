@@ -18,20 +18,12 @@ namespace SwipesCollectionManagement.DAL
         {
         }
 
-        public SwipesDbContext()
-        {
-        }
-
         public SwipesDbContext(DbContextOptions<SwipesDbContext> options) : base(options)
         {
         }
 
         public DbSet<Swipe> Swipes { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Swipe>(eb => {eb.HasNoKey();});
-        //}
     }
 }
 

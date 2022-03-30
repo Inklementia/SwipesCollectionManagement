@@ -5,12 +5,9 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwipesCollectionManagement.Service", "SwipesCollectionManagement.Service\SwipesCollectionManagement.Service.csproj", "{E239872F-9768-47FA-BAA1-8EE7B745F63B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwipesCollectionManagement.UI", "SwipesCollectionManagement.UI\SwipesCollectionManagement.UI.csproj", "{22131AA6-F6A0-4016-A345-D5BCC238B456}"
-	ProjectSection(ProjectDependencies) = postProject
-		{E239872F-9768-47FA-BAA1-8EE7B745F63B} = {E239872F-9768-47FA-BAA1-8EE7B745F63B}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwipesCollectionManagement.DAL", "SwipesCollectionManagement.DAL\SwipesCollectionManagement.DAL.csproj", "{267CCA5D-3435-41AF-B5FF-4C6FF133B1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwipesCollectionManagement.UI", "SwipesCollectionManagement.UI\SwipesCollectionManagement.UI.csproj", "{ED1E4412-F2D3-463D-80A0-0B3353ACFA48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,14 +19,14 @@ Global
 		{E239872F-9768-47FA-BAA1-8EE7B745F63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E239872F-9768-47FA-BAA1-8EE7B745F63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E239872F-9768-47FA-BAA1-8EE7B745F63B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22131AA6-F6A0-4016-A345-D5BCC238B456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22131AA6-F6A0-4016-A345-D5BCC238B456}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22131AA6-F6A0-4016-A345-D5BCC238B456}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22131AA6-F6A0-4016-A345-D5BCC238B456}.Release|Any CPU.Build.0 = Release|Any CPU
 		{267CCA5D-3435-41AF-B5FF-4C6FF133B1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{267CCA5D-3435-41AF-B5FF-4C6FF133B1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{267CCA5D-3435-41AF-B5FF-4C6FF133B1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{267CCA5D-3435-41AF-B5FF-4C6FF133B1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED1E4412-F2D3-463D-80A0-0B3353ACFA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED1E4412-F2D3-463D-80A0-0B3353ACFA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED1E4412-F2D3-463D-80A0-0B3353ACFA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED1E4412-F2D3-463D-80A0-0B3353ACFA48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

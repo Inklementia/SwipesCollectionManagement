@@ -19,14 +19,21 @@ namespace SwipesCollectionManagement.UI
 {
     public partial class SwipesCollectionManagementForm : Form
     {
+        // wcf service reference
         private SwipesCollectingServiceClient _client = new SwipesCollectingServiceClient();
+
+        //terminals for current client
+        private List<TerminalModel> _terminals = new List<TerminalModel>();
+
+        //flag to track swipes retrieval process completion
         private static bool _taskCompleted;
-      
+ 
         public SwipesCollectionManagementForm()
         {
             InitializeComponent();
-          
         }
+
+        //enables/disables start button
         private void EnableStartButton(bool enable)
         {
             btnStart.Invoke((MethodInvoker)delegate
@@ -34,6 +41,8 @@ namespace SwipesCollectionManagement.UI
                 btnStart.Enabled = enable;
             });
         }
+
+        //clears any dvg
         private void ClearDisplay(DataGridView dgv)
         {
             dgv.Invoke((MethodInvoker)delegate
@@ -44,33 +53,61 @@ namespace SwipesCollectionManagement.UI
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-          
+            //disable button
             EnableStartButton(false);
+            // clear dgv if there was smth
             ClearDisplay(dgvTerminals);
+            // swipes retrieval
             _client.StartCollectingSwipes();
-         
+            _terminals = _client.GetStatus().ToList();
+            // run bgworker if it is not busy
             if (!backgroundWorker1.IsBusy)
             {
                 backgroundWorker1.RunWorkerAsync();
             }
         }
-      
-        private bool IsTaskCompleted(List<TerminalModel> terminals)
+
+        // returns if there are Waiting or InProcess swipes
+        private bool IsTaskCompleted()
         {
-            return terminals.Where(t => t.Status == TerminalStatus.Waiting || t.Status == TerminalStatus.InProcess).Count() == 0;
+            var unfinishedTerminalsCount = _terminals.Where(t => t.Status == TerminalStatus.Waiting || t.Status == TerminalStatus.InProcess).Count();
+            return unfinishedTerminalsCount == 0 ? true : false;
         }
-        private int GetProgress(List<TerminalModel> terminals)
+
+        // returns count of finished terminals
+        private int FinishedTerminalsCount()
         {
-            return terminals.Where(t => t.Status == TerminalStatus.Finished).Count() * 100 / terminals.Count;
+            var finishedTerminalsCount = _terminals.Where(t => t.Status == TerminalStatus.Finished).Count();
+            return finishedTerminalsCount;
         }
-        private void UpdateTerminalDataGridView(List<TerminalModel> terminals)
+
+        //updates termianals dgv
+        private void UpdateTerminalDataGridView()
         {
             dgvTerminals.Invoke((MethodInvoker)delegate
             {
-                dgvTerminals.DataSource = terminals;
+                dgvTerminals.DataSource = _terminals;
                 dgvTerminals.ClearSelection();
             });
-               
+        }
+
+        //retrieve all swipes from the db
+        private void UpdateSwipesDataGridView()
+        {
+            try
+            {
+                //retrieve all swipes from the database and display in data grid view
+                var swipes = _client.GetAllSwipes().ToList();
+                dgvSwipes.Invoke((MethodInvoker)delegate
+                {
+                    dgvSwipes.DataSource = swipes;
+                    dgvSwipes.ClearSelection();
+                });
+            }
+            catch (CommunicationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -80,17 +117,18 @@ namespace SwipesCollectionManagement.UI
 
             while (!_taskCompleted)
             {
-
-                List<TerminalModel> terminals = _client.GetStatus().ToList();
-                backgroundWorker1.ReportProgress(GetProgress(terminals));
-
-
-                _taskCompleted = IsTaskCompleted(terminals);
-                UpdateTerminalDataGridView(terminals);
-            
-                Thread.Sleep(1000);
+                // getting statuses from service client
+                _terminals = _client.GetStatus().ToList();
+                // while there are swipes with Waiting and InProcess statuses, process retrieval is not completed
+                _taskCompleted = IsTaskCompleted();
+                // update dgv
+                UpdateTerminalDataGridView();
+                // for progress bar
+                backgroundWorker1.ReportProgress(FinishedTerminalsCount() * 100 / _terminals.Count);
+                //repeat every 500 ms
+                Thread.Sleep(500);
             }
-
+            // fill swipes dgv with data from db
             UpdateSwipesDataGridView();
             EnableStartButton(true);
 
@@ -99,15 +137,17 @@ namespace SwipesCollectionManagement.UI
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            //changes progressbar value and label text
             prgbProcess.Value = e.ProgressPercentage;
             lblProgress.Text = e.ProgressPercentage + "%";
-       
         }
-        private void backgroundWorker1_RunWorkerCompleted_1(object sender, RunWorkerCompletedEventArgs e)
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             lblProgress.Text = "Retrieval Completed.";
-            
         }
+
+        //change swipeStatus column color
         private void dgvTerminals_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 1)
@@ -128,38 +168,15 @@ namespace SwipesCollectionManagement.UI
             }
         }
 
-        //retrieve all swipes from the db
-        private void UpdateSwipesDataGridView()
-        {
-            try
-            {
-                //retrieve all swipes from the database and display in data grid view
-                var swipes = _client.GetAllSwipes().ToList();
-                dgvSwipes.Invoke((MethodInvoker)delegate
-                {
-                    dgvSwipes.DataSource = swipes;
-                    dgvSwipes.ClearSelection();
-                });
-            }
-            catch (CommunicationException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void SwipesCollectionManagementForm_Load(object sender, EventArgs e)
         {
-            ClearDisplay(dgvSwipes);
-            _client.DeleteAllSwipes();
-            UpdateSwipesDataGridView();
+            ClearDisplay(dgvSwipes); // clear swipe dgv
+            _client.DeleteAllSwipes(); // clear database
+            UpdateSwipesDataGridView(); // fill swipe grid with data
         }
-
-     
     }
 
 
-    
-}
 
+}
 
