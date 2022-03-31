@@ -21,5 +21,4 @@ namespace SwipesCollectionManagement.Service.Connection
             return new SwipesDbContext(optionsBuilder.Options);
         }
     }
-
 }

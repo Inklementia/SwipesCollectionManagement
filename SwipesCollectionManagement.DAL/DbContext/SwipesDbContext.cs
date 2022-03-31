@@ -12,7 +12,6 @@ namespace SwipesCollectionManagement.DAL
 {
     public class SwipesDbContext : DbContext
     {
-
         public SwipesDbContext(string connectionString) : base(
             (new DbContextOptionsBuilder<SwipesDbContext>().UseSqlServer(connectionString)).Options)
         {

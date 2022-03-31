@@ -171,7 +171,7 @@ namespace SwipesCollectionManagement.UI
         private void SwipesCollectionManagementForm_Load(object sender, EventArgs e)
         {
             ClearDisplay(dgvSwipes); // clear swipe dgv
-            _client.DeleteAllSwipes(); // clear database
+            //_client.DeleteAllSwipes(); // clear database
             UpdateSwipesDataGridView(); // fill swipe grid with data
         }
     }

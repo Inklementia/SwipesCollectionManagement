@@ -24,7 +24,7 @@ namespace SwipesCollectionManagement.Service
         // to make only 3 terminals process at a time
         private Semaphore semaphore = new Semaphore(3, 3);
 
-        private int _terminalsNumber = 4;
+        private int _terminalsNumber = 5;
 
         //repository to add/get from db
         private readonly SwipeRepository _repository;
@@ -110,10 +110,10 @@ namespace SwipesCollectionManagement.Service
 
             return swipesModels;
         }
+        //deletes all swipes from database
         public void DeleteAllSwipes()
         {
              _repository.DeleteAll();
-            
         }
 
         // maps swipeModel to swipe
